@@ -13,6 +13,7 @@ export function personSchema() {
     "@id": personId,
     name: siteConfig.name,
     url: siteConfig.url,
+    image: absoluteUrl("/images/naomi-headshot.jpg"),
     jobTitle: "College Money, Opportunity & Career Strategist",
     description:
       "Naomi Peters helps high-school and college students build a strategy for funding college, finding opportunities, gaining experience, and graduating with direction.",

@@ -40,7 +40,7 @@ export default function SpeakingPage() {
             </a>
           </div>
           <div className="lg:col-span-5">
-            <Photo name="speaking" className="aspect-[4/5] w-full" sizes="(min-width: 1024px) 38vw, 100vw" />
+            <Photo name="speaking" className="aspect-[4/3] w-full lg:mt-10" sizes="(min-width: 1024px) 38vw, 100vw" />
           </div>
         </Container>
       </section>

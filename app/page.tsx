@@ -51,13 +51,15 @@ export default function HomePage() {
             </div>
           </div>
           <div className="lg:col-span-5">
-            <div className="relative mx-auto max-w-md lg:max-w-none">
-              <Photo
-                name="portrait"
-                priority
-                sizes="(min-width: 1024px) 38vw, (min-width: 640px) 28rem, 100vw"
-                className="aspect-[4/5] w-full lg:aspect-[6/7]"
-              />
+            <div className="relative mx-auto flex max-w-md items-center justify-center bg-sand px-8 py-12 lg:aspect-[6/7] lg:max-w-none lg:py-0">
+              <div className="w-full max-w-[21rem] rounded-full p-2 ring-1 ring-terracotta/40">
+                <Photo
+                  name="headshot"
+                  priority
+                  sizes="(min-width: 640px) 21rem, 80vw"
+                  className="aspect-square w-full rounded-full"
+                />
+              </div>
               <div className="absolute -bottom-5 -left-3 bg-ink px-5 py-4 text-ivory shadow-xl sm:-left-6">
                 <p className="display text-4xl text-gold">$0</p>
                 <p className="label mt-1 text-[0.65rem] text-ivory/85">Student debt at graduation</p>

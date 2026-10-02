@@ -9,6 +9,7 @@
  * If none exist, a labelled "Photo coming soon" placeholder is shown.
  */
 export type PhotoKey =
+  | "headshot"
   | "portrait"
   | "graduation"
   | "studyAbroad"
@@ -32,23 +33,22 @@ export interface PhotoEntry {
 }
 
 export const photos: Record<PhotoKey, PhotoEntry> = {
-  portrait: {
-    src: [
-      "/images/naomi-graduation.jpg",
-      { src: "/images/travel-kyoto-fushimi-inari.webp", alt: "Naomi Peters at the Fushimi Inari gates in Kyoto" },
-    ],
+  headshot: {
+    src: "/images/naomi-headshot.jpg",
     alt: "Naomi Peters",
+    label: "Headshot of Naomi",
+  },
+  portrait: {
+    src: "/images/naomi-graduation.webp",
+    alt: "Naomi Peters at graduation, University of St. Thomas",
     label: "Portrait of Naomi",
-    position: "50% 30%",
+    position: "50% 25%",
   },
   graduation: {
-    src: [
-      "/images/naomi-graduation.jpg",
-      { src: "/images/travel-neuschwanstein.webp", alt: "Naomi Peters and a friend at Neuschwanstein Castle" },
-    ],
+    src: "/images/naomi-graduation.webp",
     alt: "Naomi Peters at graduation, University of St. Thomas",
     label: "Graduation photo",
-    position: "50% 30%",
+    position: "50% 20%",
   },
   studyAbroad: {
     src: "/images/travel-kyoto-kimono.webp",
@@ -67,13 +67,10 @@ export const photos: Record<PhotoKey, PhotoEntry> = {
     label: "Professional / internship photo",
   },
   speaking: {
-    src: [
-      "/images/naomi-speaking-panel.jpg",
-      { src: "/images/sailing-instructor.webp", alt: "Teaching students to rig a sailboat at the dock" },
-    ],
-    alt: "Naomi Peters moderating an Inspired Generosity interfaith panel discussion",
+    src: "/images/naomi-speaking.webp",
+    alt: "Naomi Peters speaking to an audience at an Inspired Generosity interfaith panel",
     label: "Speaking / workshop photo",
-    position: "47% 50%",
+    position: "50% 60%",
   },
   sailingUst: {
     src: "/images/sailing-ust-race.webp",
