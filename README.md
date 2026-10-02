@@ -185,7 +185,7 @@ The Privacy page automatically mentions Google Analytics once it's on.
 2. In Vercel, open **Project → Settings → Domains → Add**, and type your domain (for example `naomipeters.com`). Add the `www.` version too.
 3. Vercel shows one or two DNS records (usually an **A** record and a **CNAME**). Add them in your domain company's DNS settings.
 4. Wait for Vercel to show **Valid Configuration**. This usually takes minutes, but can take up to 48 hours.
-5. Set `NEXT_PUBLIC_SITE_URL=https://www.makecollegepayoff.com` in Vercel and **redeploy**. This sets the URLs Google sees and the links in social share previews.
+5. Set `NEXT_PUBLIC_SITE_URL=https://makecollegepayoff.com` in Vercel and **redeploy**. This sets the URLs Google sees and the links in social share previews.
 6. Update the Stripe redirect URLs (§7) to your real domain.
 
 ## 11. Deploy to Vercel

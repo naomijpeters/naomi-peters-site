@@ -37,11 +37,17 @@ export const siteConfig = {
     facebook: env(process.env.NEXT_PUBLIC_FACEBOOK_URL),
   },
 
-  /** Calendly event links. */
+  /**
+   * Calendly event links. These are public, so the defaults live here;
+   * an environment variable with the same purpose overrides them.
+   */
   booking: {
-    freeCall: env(process.env.NEXT_PUBLIC_CALENDLY_FREE_CALL_URL),
-    strategySession: env(process.env.NEXT_PUBLIC_CALENDLY_STRATEGY_URL),
-    fitCall: env(process.env.NEXT_PUBLIC_CALENDLY_FIT_CALL_URL),
+    freeCall:
+      env(process.env.NEXT_PUBLIC_CALENDLY_FREE_CALL_URL) ??
+      "https://calendly.com/naomijpeters/free-20-minute-college-roi-call",
+    strategySession: env(process.env.NEXT_PUBLIC_CALENDLY_STRATEGY_URL) ?? "https://calendly.com/naomijpeters/30min",
+    fitCall:
+      env(process.env.NEXT_PUBLIC_CALENDLY_FIT_CALL_URL) ?? "https://calendly.com/naomijpeters/flagship-program-fit-call",
   },
 
   /** Stripe-hosted Payment Links / Checkout URLs. No card data touches this site. */
