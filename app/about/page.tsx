@@ -1,10 +1,13 @@
+import Image from "next/image";
 import Link from "next/link";
 import { BookingButton } from "@/components/CtaButtons";
+import { ExperienceList } from "@/components/Experience";
 import { FinalCta } from "@/components/FinalCta";
 import { JsonLd } from "@/components/JsonLd";
 import { Ledger } from "@/components/Metrics";
 import { Photo } from "@/components/Photo";
 import { Arrow, Container, SectionLabel, buttonClasses } from "@/components/ui";
+import { travelGallery } from "@/content/photos";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema, personSchema } from "@/lib/structuredData";
 
@@ -70,7 +73,7 @@ export default function AboutPage() {
               The pieces were connected.
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-ink-soft">
-              During school I completed 4 internships, a co-op and 3 fellowships. I studied abroad for a semester and
+              During school I completed 4 internships, a co-op and 3 fellowships, and attended 3 conferences. I studied abroad for a semester and
               traveled to more than 30 countries. None of it happened in isolation — each piece made the next one
               possible.
             </p>
@@ -86,14 +89,84 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section aria-label="Photos" className="pb-20 sm:pb-28">
+      <section aria-labelledby="work-title" className="bg-paper py-20 sm:py-28">
         <Container>
-          <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-            <Photo name="studyAbroad" className="aspect-[3/4]" sizes="(min-width: 1024px) 24vw, 50vw" />
-            <Photo name="professional" className="aspect-[3/4] lg:translate-y-10" sizes="(min-width: 1024px) 24vw, 50vw" />
-            <Photo name="travel" className="aspect-[3/4]" sizes="(min-width: 1024px) 24vw, 50vw" />
-            <Photo name="graduation" className="aspect-[3/4] lg:translate-y-10" sizes="(min-width: 1024px) 24vw, 50vw" />
+          <SectionLabel>Experience</SectionLabel>
+          <h2 id="work-title" className="display mt-6 text-5xl">
+            Where I&apos;ve worked
+          </h2>
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft">
+            Corporate finance, financial advising, startups, cancer research, surgical-technology research in London, a
+            microbiology lab, patient care, a greenhouse and a sailing dock. Every one taught me something about what&apos;s out there — and how students
+            can find it.
+          </p>
+          <div className="mt-12">
+            <ExperienceList />
           </div>
+        </Container>
+      </section>
+
+      <section aria-labelledby="sailing-title" className="py-20 sm:py-28">
+        <Container>
+          <div className="grid gap-8 lg:grid-cols-12">
+            <div className="lg:col-span-5">
+              <SectionLabel>Beyond the classroom</SectionLabel>
+              <h2 id="sailing-title" className="display mt-6 text-5xl">
+                Competitive sailing
+              </h2>
+            </div>
+            <p className="text-lg leading-relaxed text-ink-soft lg:col-span-6 lg:col-start-7 lg:pt-14">
+              I raced for the University of St. Thomas sailing team, crewed at the St. Maarten Heineken Regatta in the
+              Caribbean, and taught sailing as an instructor. Extracurriculars aren&apos;t a distraction from a
+              strategy — they&apos;re often where the best opportunities start.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-4 md:grid-cols-2">
+            <Photo
+              name="sailingUst"
+              className="aspect-[3/2]"
+              sizes="(min-width: 768px) 50vw, 100vw"
+              caption="Racing with the University of St. Thomas sailing team"
+            />
+            <Photo
+              name="sailingRegatta"
+              className="aspect-[3/2]"
+              sizes="(min-width: 768px) 50vw, 100vw"
+              caption="St. Maarten Heineken Regatta, Caribbean · Photo © Laurens Morel / saltycolours.com"
+            />
+          </div>
+        </Container>
+      </section>
+
+      <section aria-labelledby="travel-title" className="bg-sand py-20 sm:py-28">
+        <Container>
+          <SectionLabel>30+ countries</SectionLabel>
+          <h2 id="travel-title" className="display mt-6 text-5xl">
+            The world, while in school
+          </h2>
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft">
+            A semester abroad and more than 30 countries. Not every trip was funded by a scholarship — but budgeting,
+            planning and saying yes to the right opportunities made them possible.
+          </p>
+          <ul className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
+            {travelGallery.map((photo) => (
+              <li key={photo.src}>
+                <figure>
+                  <div className="relative aspect-[4/5] overflow-hidden">
+                    <Image
+                      src={photo.src}
+                      alt={photo.alt}
+                      fill
+                      sizes="(min-width: 1024px) 30vw, 50vw"
+                      className="object-cover transition-transform duration-700 hover:scale-[1.03]"
+                      style={photo.position ? { objectPosition: photo.position } : undefined}
+                    />
+                  </div>
+                  <figcaption className="mt-2 text-sm text-ink-soft">{photo.caption}</figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
         </Container>
       </section>
 

@@ -1,10 +1,23 @@
+import fs from "node:fs";
+import path from "node:path";
 import Image from "next/image";
-import { photos, type PhotoKey } from "@/content/photos";
+import { photos, type PhotoKey, type PhotoSource } from "@/content/photos";
 import { cx } from "@/components/ui";
 
+/** First listed file that actually exists in /public, checked at build time. */
+function resolveSrc(src: PhotoSource | PhotoSource[] | null, alt: string): { src: string; alt: string } | null {
+  const candidates = src === null ? [] : Array.isArray(src) ? src : [src];
+  for (const c of candidates) {
+    const entry = typeof c === "string" ? { src: c, alt } : c;
+    if (fs.existsSync(path.join(process.cwd(), "public", entry.src))) return entry;
+  }
+  return null;
+}
+
 /**
- * Renders Naomi's real photo when `src` is set in content/photos.ts,
+ * Renders Naomi's real photo when one is set in content/photos.ts,
  * otherwise a clearly-labelled placeholder (never a stock or AI image).
+ * Server component only — it checks the filesystem.
  */
 export function Photo({
   name,
@@ -20,10 +33,19 @@ export function Photo({
   caption?: string;
 }) {
   const photo = photos[name];
+  const resolved = resolveSrc(photo.src, photo.alt);
   return (
     <figure className={cx("relative overflow-hidden", className)}>
-      {photo.src ? (
-        <Image src={photo.src} alt={photo.alt} fill sizes={sizes} priority={priority} className="object-cover" />
+      {resolved ? (
+        <Image
+          src={resolved.src}
+          alt={resolved.alt}
+          fill
+          sizes={sizes}
+          priority={priority}
+          className="object-cover"
+          style={photo.position ? { objectPosition: photo.position } : undefined}
+        />
       ) : (
         <div
           role="img"

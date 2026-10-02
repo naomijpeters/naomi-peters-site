@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArticleGrid } from "@/components/ArticleCard";
 import { BookingButton } from "@/components/CtaButtons";
+import { ExperienceList } from "@/components/Experience";
 import { FinalCta } from "@/components/FinalCta";
 import { JsonLd } from "@/components/JsonLd";
 import { LeadMagnetSection } from "@/components/LeadMagnet";
@@ -222,6 +223,16 @@ export default function HomePage() {
           </div>
           <div className="lg:col-span-7">
             <Ledger />
+          </div>
+        </Container>
+        <Container className="mt-20 sm:mt-24">
+          <h3 className="display text-4xl sm:text-5xl">Where I&apos;ve worked</h3>
+          <p className="mt-4 max-w-2xl text-lg text-ink-soft">
+            Finance, research, healthcare, startups and the water — breadth that helps me see the options students
+            don&apos;t know they have.
+          </p>
+          <div className="mt-10">
+            <ExperienceList />
           </div>
         </Container>
       </section>

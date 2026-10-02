@@ -42,7 +42,7 @@ export const home = {
     paragraphs: [
       "I didn’t receive need-based scholarships, and my family didn’t pay my tuition. So I had to get strategic about where to look, what to apply for, and what every cost would give back.",
       "By graduation I had secured more than 20 scholarships and 5 grants, earned a finance degree from the University of St. Thomas — and owed $0 in student debt.",
-      "Funding was only the start. Along the way I completed 4 internships, a co-op and 3 fellowships, studied abroad for a semester, and traveled to more than 30 countries while in school.",
+      "Funding was only the start. Along the way I completed 4 internships, a co-op and 3 fellowships, attended 3 conferences, studied abroad for a semester, and traveled to more than 30 countries while in school.",
     ],
     honesty:
       "My results are my own, and no outcome is guaranteed. You don’t need to do college exactly the way I did. You need a strategy that works for you — that’s what coaching helps you build.",
