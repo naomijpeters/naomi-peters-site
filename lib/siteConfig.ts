@@ -52,9 +52,10 @@ export const siteConfig = {
 
   /** Stripe-hosted Payment Links / Checkout URLs. No card data touches this site. */
   checkout: {
-    strategyPack: env(process.env.NEXT_PUBLIC_STRIPE_STRATEGY_PACK_URL),
-    intensive: env(process.env.NEXT_PUBLIC_STRIPE_INTENSIVE_URL),
-    blueprint: env(process.env.NEXT_PUBLIC_STRIPE_ROI_BLUEPRINT_URL),
+    strategyPack:
+      env(process.env.NEXT_PUBLIC_STRIPE_STRATEGY_PACK_URL) ?? "https://buy.stripe.com/00w28k5hF3CN3i9eaN2kw00",
+    intensive: env(process.env.NEXT_PUBLIC_STRIPE_INTENSIVE_URL) ?? "https://buy.stripe.com/3cI28k6lJ2yJ2e5feR2kw01",
+    blueprint: env(process.env.NEXT_PUBLIC_STRIPE_ROI_BLUEPRINT_URL) ?? "https://buy.stripe.com/eVq6oA4dB4GR2e5d6J2kw02",
     paymentPlan: env(process.env.NEXT_PUBLIC_STRIPE_PAYMENT_PLAN_URL),
   },
 
