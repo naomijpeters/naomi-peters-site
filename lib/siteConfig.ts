@@ -68,7 +68,8 @@ export const siteConfig = {
   },
 
   leadMagnetUrl: env(process.env.NEXT_PUBLIC_LEAD_MAGNET_URL),
-  analyticsId: env(process.env.NEXT_PUBLIC_GA_ID),
+  /** Google Analytics 4 measurement ID (public); NEXT_PUBLIC_GA_ID overrides it. */
+  analyticsId: env(process.env.NEXT_PUBLIC_GA_ID) ?? "G-F6ZFDTBQYT",
 
   legal: {
     entityName: env(process.env.NEXT_PUBLIC_LEGAL_ENTITY_NAME) ?? "Naomi Peters",
