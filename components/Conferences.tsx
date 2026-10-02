@@ -33,30 +33,32 @@ export function ConferenceList() {
   return (
     <div className="space-y-16">
       {conferences.map((conf) => {
-        const { grid, spans } = layout(conf.photos.length);
-        const mosaic = conf.photos.length > 3;
+        const photos = conf.photos ?? [];
+        const { grid, spans } = layout(photos.length);
+        const mosaic = photos.length > 3;
+        const id = `conf-${conf.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
         return (
-          <article key={conf.name} aria-labelledby={`conf-${conf.name}`} className="border-t-2 border-ink pt-6">
+          <article key={conf.name} aria-labelledby={id} className="border-t-2 border-ink pt-6">
             <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
-              <h3 id={`conf-${conf.name}`} className="display text-4xl">
+              <h3 id={id} className="display text-4xl">
                 {conf.name}
               </h3>
-              <p className="label text-terracotta">
-                {conf.field} · {conf.place}
-              </p>
+              <p className="label text-terracotta">{[conf.field, conf.place].filter(Boolean).join(" · ")}</p>
             </div>
             <p className="mt-3 max-w-2xl text-ink-soft">{conf.description}</p>
-            <ul className={cx("mt-8 grid grid-cols-2 gap-3 sm:gap-4", grid)}>
-              {conf.photos.map((photo, i) => (
-                <li key={photo.src} className={spans[i]}>
-                  <Photo
-                    photo={photo}
-                    large={mosaic && i === 0}
-                    sizes={mosaic && i === 0 ? "(min-width: 1024px) 50vw, 100vw" : "(min-width: 1024px) 30vw, 50vw"}
-                  />
-                </li>
-              ))}
-            </ul>
+            {photos.length > 0 && (
+              <ul className={cx("mt-8 grid grid-cols-2 gap-3 sm:gap-4", grid)}>
+                {photos.map((photo, i) => (
+                  <li key={photo.src} className={spans[i]}>
+                    <Photo
+                      photo={photo}
+                      large={mosaic && i === 0}
+                      sizes={mosaic && i === 0 ? "(min-width: 1024px) 50vw, 100vw" : "(min-width: 1024px) 30vw, 50vw"}
+                    />
+                  </li>
+                ))}
+              </ul>
+            )}
           </article>
         );
       })}

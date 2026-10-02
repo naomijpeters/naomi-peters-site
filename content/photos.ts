@@ -96,6 +96,7 @@ export const photos: Record<PhotoKey, PhotoEntry> = {
 export const travelGallery: { src: string; alt: string; caption: string; position?: string }[] = [
   { src: "/images/travel-kyoto-fushimi-inari.webp", alt: "Walking through the torii gates at Fushimi Inari", caption: "Fushimi Inari, Kyoto", position: "50% 40%" },
   { src: "/images/travel-lake-atitlan.webp", alt: "Swimming in Lake Atitlán below a volcano", caption: "Lake Atitlán, Guatemala" },
+  { src: "/images/travel-mt-batur-bali.webp", alt: "Friends at sunrise on the summit of Mount Batur", caption: "Mt. Batur, Bali, Indonesia", position: "50% 70%" },
   { src: "/images/travel-colosseum.webp", alt: "Walking past the Colosseum", caption: "Rome, Italy" },
   { src: "/images/travel-paris-eiffel-tower.webp", alt: "The Eiffel Tower lit up at night", caption: "Paris, France" },
   { src: "/images/travel-paris-opera.webp", alt: "Red and gold balconies inside the Palais Garnier opera house", caption: "Palais Garnier, Paris" },

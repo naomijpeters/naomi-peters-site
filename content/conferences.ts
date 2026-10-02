@@ -1,6 +1,7 @@
 /**
  * Conferences shown on the About page. The first photo of each is shown large.
  * To add one: copy a block, put its photos in /public/images, and fill it in.
+ * `place` and `photos` are optional; a conference without photos shows as text.
  */
 export interface ConferencePhoto {
   src: string;
@@ -11,9 +12,9 @@ export interface ConferencePhoto {
 export interface Conference {
   name: string;
   field: string;
-  place: string;
+  place?: string;
   description: string;
-  photos: ConferencePhoto[];
+  photos?: ConferencePhoto[];
 }
 
 export const conferences: Conference[] = [
@@ -41,5 +42,15 @@ export const conferences: Conference[] = [
       { src: "/images/conf-organoid-symposium.webp", alt: "Symposium ballroom with “Minnesota Organoid Symposium: Cells to Cures” on the screens", caption: "Cells to Cures, 2025" },
       { src: "/images/conf-organoid-poster.webp", alt: "A Mayo Clinic research poster on dorsal root ganglion organoids", caption: "Research poster session" },
     ],
+  },
+  {
+    name: "Interfaith America Leadership Summit",
+    field: "Interfaith leadership",
+    description: "A national gathering of student and community leaders working across religious differences.",
+  },
+  {
+    name: "AANS Annual Conference",
+    field: "Neurosurgery",
+    description: "The American Association of Neurological Surgeons' annual meeting.",
   },
 ];
