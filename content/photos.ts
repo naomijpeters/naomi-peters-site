@@ -71,9 +71,9 @@ export const photos: Record<PhotoKey, PhotoEntry> = {
       "/images/naomi-speaking-panel.jpg",
       { src: "/images/sailing-instructor.webp", alt: "Teaching students to rig a sailboat at the dock" },
     ],
-    alt: "Naomi Peters moderating a panel discussion",
+    alt: "Naomi Peters moderating an Inspired Generosity interfaith panel discussion",
     label: "Speaking / workshop photo",
-    position: "50% 40%",
+    position: "47% 50%",
   },
   sailingUst: {
     src: "/images/sailing-ust-race.webp",

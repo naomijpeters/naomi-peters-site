@@ -17,7 +17,7 @@ export const metrics: Metric[] = [
   { value: "1", label: "Co-op" },
   { value: "3", label: "Fellowships" },
   { value: "1", label: "Semester Abroad" },
-  { value: "3", label: "Conferences" },
+  { value: "4", label: "Conferences" },
 ];
 
 /** The "ledger" on the homepage and About page. */
@@ -31,6 +31,6 @@ export const ledger: { item: string; value: string }[] = [
   { item: "Co-op", value: "1" },
   { item: "Fellowships", value: "3" },
   { item: "Semester abroad", value: "1" },
-  { item: "Conferences attended", value: "3" },
+  { item: "Conferences attended", value: "4" },
   { item: "Countries visited while in school", value: "30+" },
 ];

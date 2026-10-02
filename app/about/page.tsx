@@ -8,6 +8,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { Ledger } from "@/components/Metrics";
 import { Photo } from "@/components/Photo";
 import { Arrow, Container, SectionLabel, buttonClasses } from "@/components/ui";
+import { conferences } from "@/content/conferences";
 import { travelGallery } from "@/content/photos";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema, personSchema } from "@/lib/structuredData";
@@ -74,7 +75,7 @@ export default function AboutPage() {
               The pieces were connected.
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-ink-soft">
-              During school I completed 4 internships, a co-op and 3 fellowships, and attended 3 conferences. I studied abroad for a semester and
+              During school I completed 4 internships, a co-op and 3 fellowships, and attended 4 conferences. I studied abroad for a semester and
               traveled to more than 30 countries. None of it happened in isolation — each piece made the next one
               possible.
             </p>
@@ -109,7 +110,7 @@ export default function AboutPage() {
 
       <section aria-labelledby="conferences-title" className="py-20 sm:py-28">
         <Container>
-          <SectionLabel>3 conferences</SectionLabel>
+          <SectionLabel>{conferences.length} conferences</SectionLabel>
           <h2 id="conferences-title" className="display mt-6 text-5xl">
             In the room where it happens
           </h2>
