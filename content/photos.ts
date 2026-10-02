@@ -97,6 +97,8 @@ export const travelGallery: { src: string; alt: string; caption: string; positio
   { src: "/images/travel-kyoto-fushimi-inari.webp", alt: "Walking through the torii gates at Fushimi Inari", caption: "Fushimi Inari, Kyoto", position: "50% 40%" },
   { src: "/images/travel-lake-atitlan.webp", alt: "Swimming in Lake Atitlán below a volcano", caption: "Lake Atitlán, Guatemala" },
   { src: "/images/travel-colosseum.webp", alt: "Walking past the Colosseum", caption: "Rome, Italy" },
+  { src: "/images/travel-paris-eiffel-tower.webp", alt: "The Eiffel Tower lit up at night", caption: "Paris, France" },
+  { src: "/images/travel-paris-opera.webp", alt: "Red and gold balconies inside the Palais Garnier opera house", caption: "Palais Garnier, Paris" },
   { src: "/images/travel-neuschwanstein.webp", alt: "Friends in front of Neuschwanstein Castle", caption: "Neuschwanstein, Germany" },
   { src: "/images/travel-mont-saint-michel.webp", alt: "Mont-Saint-Michel on an overcast day", caption: "Mont-Saint-Michel, France" },
   { src: "/images/travel-alps-hike.webp", alt: "Hiking a ridge trail in the Alps", caption: "Hiking in the Alps" },
