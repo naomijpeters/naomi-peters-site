@@ -22,7 +22,7 @@ export const siteConfig = {
   title: "Naomi Peters | College Money, Scholarship & Career Strategy",
   description:
     "College strategy for scholarships, funding, internships, fellowships, career direction and making the most of your college years.",
-  url: (env(process.env.NEXT_PUBLIC_SITE_URL) ?? "http://localhost:3000").replace(/\/$/, ""),
+  url: (env(process.env.NEXT_PUBLIC_SITE_URL) ?? "https://makecollegepayoff.com").replace(/\/$/, ""),
   locale: "en_US",
 
   email: env(process.env.NEXT_PUBLIC_CONTACT_EMAIL),
