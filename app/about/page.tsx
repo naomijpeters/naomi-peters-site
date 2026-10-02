@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ConferenceList } from "@/components/Conferences";
 import { BookingButton } from "@/components/CtaButtons";
 import { ExperienceList } from "@/components/Experience";
 import { FinalCta } from "@/components/FinalCta";
@@ -106,7 +107,23 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section aria-labelledby="sailing-title" className="py-20 sm:py-28">
+      <section aria-labelledby="conferences-title" className="py-20 sm:py-28">
+        <Container>
+          <SectionLabel>3 conferences</SectionLabel>
+          <h2 id="conferences-title" className="display mt-6 text-5xl">
+            In the room where it happens
+          </h2>
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft">
+            Conferences put students in front of professionals, researchers and employers they&apos;d never meet on
+            campus. Student rates and sponsorships can make them more affordable than people expect.
+          </p>
+          <div className="mt-12">
+            <ConferenceList />
+          </div>
+        </Container>
+      </section>
+
+      <section aria-labelledby="sailing-title" className="bg-paper py-20 sm:py-28">
         <Container>
           <div className="grid gap-8 lg:grid-cols-12">
             <div className="lg:col-span-5">
