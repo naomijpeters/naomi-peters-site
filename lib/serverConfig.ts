@@ -9,7 +9,8 @@ function env(value: string | undefined): string | undefined {
 }
 
 export const serverConfig = {
-  intakeFormUrl: env(process.env.INTAKE_FORM_URL),
+  /** Public form link; the INTAKE_FORM_URL environment variable overrides it. */
+  intakeFormUrl: env(process.env.INTAKE_FORM_URL) ?? "https://forms.gle/6JVxzZs1qKcVUVtG8",
   clientSchedulingUrl: env(process.env.CLIENT_SCHEDULING_URL),
 
   email: {
