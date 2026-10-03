@@ -30,10 +30,10 @@ export const siteConfig = {
 
   /** Only configured profiles are shown anywhere on the site. */
   social: {
-    instagram: env(process.env.NEXT_PUBLIC_INSTAGRAM_URL),
+    instagram: env(process.env.NEXT_PUBLIC_INSTAGRAM_URL) ?? "https://www.instagram.com/makecollegepayoff/",
     tiktok: env(process.env.NEXT_PUBLIC_TIKTOK_URL),
     youtube: env(process.env.NEXT_PUBLIC_YOUTUBE_URL),
-    linkedin: env(process.env.NEXT_PUBLIC_LINKEDIN_URL),
+    linkedin: env(process.env.NEXT_PUBLIC_LINKEDIN_URL) ?? "https://www.linkedin.com/in/naomi-peters-8a6643270/",
     facebook: env(process.env.NEXT_PUBLIC_FACEBOOK_URL),
   },
 
