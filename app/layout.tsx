@@ -34,6 +34,7 @@ export const metadata: Metadata = {
     images: [{ url: ogImageUrl("Get more out of college. Owe less for it."), width: 1200, height: 630 }],
   },
   twitter: { card: "summary_large_image", title: siteConfig.title, description: siteConfig.description },
+  verification: { google: siteConfig.googleSiteVerification },
 };
 
 export const viewport: Viewport = {
