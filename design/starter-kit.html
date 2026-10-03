@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>The College ROI Starter Kit — Naomi Peters</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<!--
+  Source for the College ROI Starter Kit PDF.
+  Edit the text here, then re-export:
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --no-pdf-header-footer \
+    --print-to-pdf=design/college-roi-starter-kit.pdf design/starter-kit.html
+-->
+<style>
+  :root {
+    --ivory: #f7f3ec; --paper: #fcfaf6; --sand: #eee7db; --line: #d8cebe;
+    --ink: #17160f; --ink-soft: #46423a; --muted: #6a6458;
+    --forest: #1e3a32; --forest-deep: #132820; --terracotta: #a4471f; --gold: #d4a256;
+    --serif: "Instrument Serif", Georgia, serif; --sans: "Inter", system-ui, sans-serif;
+  }
+  @page { size: 8.5in 11in; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #888; }
+  body { font-family: var(--sans); color: var(--ink); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page {
+    width: 8.5in; height: 11in; position: relative; overflow: hidden;
+    background: var(--ivory); padding: 0.75in 0.8in 0.9in; margin: 0 auto 0.3in;
+    break-after: page; page-break-after: always;
+  }
+  .page:last-child { break-after: auto; page-break-after: auto; }
+  @media print { html, body { background: none; } .page { margin: 0; } }
+
+  .label { font-size: 8.5pt; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
+  .serif { font-family: var(--serif); font-weight: 400; }
+  em.serif, .serif em { font-style: italic; }
+
+  .footer {
+    position: absolute; left: 0.8in; right: 0.8in; bottom: 0.45in;
+    display: flex; justify-content: space-between; align-items: baseline;
+    border-top: 1px solid var(--line); padding-top: 9pt;
+    font-size: 8pt; color: var(--muted); letter-spacing: 0.04em;
+  }
+  .footer b { font-weight: 600; color: var(--ink-soft); }
+
+  /* Cover */
+  .cover { background: var(--forest); color: var(--ivory); padding: 0.8in; }
+  .cover .eyebrow { color: var(--gold); }
+  .cover h1 { font-family: var(--serif); font-weight: 400; font-size: 62pt; line-height: 0.98; margin-top: 0.45in; letter-spacing: -0.01em; }
+  .cover h1 em { color: var(--gold); }
+  .cover .sub { font-size: 14pt; line-height: 1.45; margin-top: 0.3in; max-width: 5.4in; color: rgba(247,243,236,0.9); }
+  .cover .portrait { position: absolute; right: 0.8in; bottom: 2.35in; width: 2.3in; height: 2.3in; border-radius: 50%; padding: 6pt; border: 1px solid rgba(212,162,86,0.55); }
+  .cover .portrait img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
+  .cover .byline { position: absolute; left: 0.8in; bottom: 2.6in; }
+  .cover .byline .name { font-family: var(--serif); font-size: 30pt; }
+  .cover .byline .desc { margin-top: 4pt; color: var(--gold); }
+  .cover .stats { position: absolute; left: 0.8in; right: 0.8in; bottom: 0.8in; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(247,243,236,0.2); }
+  .cover .stat { padding: 16pt 0 0 14pt; border-left: 1px solid rgba(247,243,236,0.2); }
+  .cover .stat:first-child { border-left: 0; padding-left: 0; }
+  .cover .stat .n { font-family: var(--serif); font-size: 34pt; line-height: 1; }
+  .cover .stat .n.gold { color: var(--gold); }
+  .cover .stat .l { margin-top: 5pt; color: rgba(247,243,236,0.8); }
+
+  /* Welcome */
+  .welcome-grid { display: grid; grid-template-columns: 1.65in 1fr; gap: 0.45in; margin-top: 0.35in; }
+  .welcome-grid .avatar { width: 1.65in; height: 1.65in; border-radius: 50%; overflow: hidden; border: 5pt solid var(--sand); }
+  .welcome-grid .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  h2.page-title { font-family: var(--serif); font-weight: 400; font-size: 40pt; line-height: 1.02; margin-top: 10pt; }
+  h2.page-title em { color: var(--forest); }
+  .letter p { font-size: 11.5pt; line-height: 1.65; color: var(--ink-soft); margin-bottom: 11pt; }
+  .letter p.lead { font-family: var(--serif); font-size: 19pt; line-height: 1.3; color: var(--ink); }
+  .letter .sign { font-family: var(--serif); font-style: italic; font-size: 24pt; color: var(--terracotta); margin-top: 4pt; }
+  .howto { margin-top: 0.35in; background: var(--paper); border: 1px solid var(--line); padding: 18pt 20pt; }
+  .howto ol { margin-top: 10pt; padding-left: 0; list-style: none; counter-reset: s; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16pt; }
+  .howto li { counter-increment: s; font-size: 10pt; line-height: 1.5; color: var(--ink-soft); }
+  .howto li::before { content: counter(s); display: block; font-family: var(--serif); font-size: 26pt; color: var(--terracotta); line-height: 1; margin-bottom: 4pt; }
+  .fine { font-size: 8.5pt; line-height: 1.5; color: var(--muted); font-style: italic; margin-top: 0.3in; }
+
+  /* Section pages */
+  .sec-head { display: grid; grid-template-columns: auto 1fr; gap: 18pt; align-items: end; border-bottom: 2px solid var(--ink); padding-bottom: 14pt; }
+  .sec-head .num { font-family: var(--serif); font-size: 64pt; line-height: 0.8; color: var(--terracotta); }
+  .sec-head h2 { font-family: var(--serif); font-weight: 400; font-size: 30pt; line-height: 1.02; }
+  .sec-head .kicker { color: var(--terracotta); margin-bottom: 6pt; }
+  .sec-intro { font-family: var(--serif); font-style: italic; font-size: 14.5pt; line-height: 1.35; color: var(--ink-soft); margin: 13pt 0 10pt; max-width: 6.2in; }
+  .place { display: grid; grid-template-columns: 0.55in 1fr; gap: 10pt; padding: 9pt 0; border-bottom: 1px solid var(--line); }
+  .place:last-child, .place:has(+ .footer) { border-bottom: 0; }
+  .place .pn { font-family: var(--serif); font-size: 28pt; line-height: 0.9; color: var(--forest); }
+  .place h3 { font-size: 11.5pt; font-weight: 600; line-height: 1.3; }
+  .place p { font-size: 9.6pt; line-height: 1.5; color: var(--ink-soft); margin-top: 3pt; }
+  .place .find { margin-top: 6pt; background: var(--sand); border-left: 3px solid var(--terracotta); padding: 6pt 9pt; font-size: 9.2pt; line-height: 1.45; color: var(--ink); }
+  .place .find b { font-weight: 600; color: var(--terracotta); letter-spacing: 0.04em; text-transform: uppercase; font-size: 7.6pt; margin-right: 4pt; }
+
+  /* Calendar */
+  .seasons { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12pt; margin-top: 16pt; }
+  .season { background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--forest); padding: 13pt 15pt; }
+  .season .when { color: var(--terracotta); }
+  .season h3 { font-family: var(--serif); font-weight: 400; font-size: 21pt; line-height: 1.05; margin-top: 4pt; }
+  .season p { font-size: 9.3pt; line-height: 1.5; color: var(--ink-soft); margin-top: 6pt; }
+  .season .do { margin-top: 7pt; font-size: 9.3pt; line-height: 1.45; }
+  .season .do b { color: var(--forest); }
+  table.tracker { width: 100%; border-collapse: collapse; margin-top: 10pt; font-size: 8.5pt; }
+  table.tracker th { text-align: left; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; font-size: 7.4pt; color: var(--ink); padding: 0 6pt 6pt 0; border-bottom: 2px solid var(--ink); }
+  table.tracker td { height: 0.36in; border-bottom: 1px solid var(--line); }
+
+  /* Closing */
+  .closing { background: var(--forest); color: var(--ivory); }
+  .closing .eyebrow { color: var(--gold); }
+  .closing h2 { font-family: var(--serif); font-weight: 400; font-size: 52pt; line-height: 1; margin-top: 0.4in; max-width: 6in; }
+  .closing h2 em { color: var(--gold); }
+  .closing p { font-size: 12.5pt; line-height: 1.6; color: rgba(247,243,236,0.9); margin-top: 18pt; max-width: 5.6in; }
+  .closing .cta { display: inline-block; margin-top: 0.4in; background: var(--terracotta); color: #fff; text-decoration: none; padding: 15pt 24pt; border-radius: 3pt; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; font-size: 10.5pt; }
+  .closing .url { margin-top: 12pt; font-family: var(--serif); font-size: 22pt; color: var(--gold); }
+  .closing .url a { color: inherit; text-decoration: none; }
+  .closing .sig { position: absolute; left: 0.8in; right: 0.8in; bottom: 1.35in; display: flex; align-items: center; gap: 16pt; border-top: 1px solid rgba(247,243,236,0.2); padding-top: 18pt; }
+  .closing .sig img { width: 0.85in; height: 0.85in; border-radius: 50%; object-fit: cover; }
+  .closing .sig .n { font-family: var(--serif); font-size: 22pt; }
+  .closing .sig p.d { color: rgba(247,243,236,0.75); margin-top: 4pt; font-size: 8.5pt; line-height: 1.3; }
+  .closing .sig p.n { margin-top: 0; }
+  .closing .legal { position: absolute; left: 0.8in; right: 0.8in; bottom: 0.55in; font-size: 7.6pt; line-height: 1.5; color: rgba(247,243,236,0.65); }
+</style>
+</head>
+<body>
+
+<!-- 1. COVER -->
+<section class="page cover">
+  <p class="label eyebrow">Free guide · Make College Pay Off</p>
+  <h1>The College ROI<br /><em>Starter Kit</em></h1>
+  <p class="sub">The 25 places students forget to look for scholarships, grants, internships, fellowships &amp; funded opportunities.</p>
+  <div class="byline">
+    <p class="name">Naomi Peters</p>
+    <p class="label desc">More opportunity. Less debt.</p>
+  </div>
+  <div class="portrait"><img src="../public/images/naomi-headshot.jpg" alt="Naomi Peters" /></div>
+  <div class="stats">
+    <div class="stat"><p class="n">20+</p><p class="label l">Scholarships</p></div>
+    <div class="stat"><p class="n">5</p><p class="label l">Grants</p></div>
+    <div class="stat"><p class="n">30+</p><p class="label l">Countries</p></div>
+    <div class="stat"><p class="n gold">$0</p><p class="label l">Student debt</p></div>
+  </div>
+</section>
+
+<!-- 2. WELCOME -->
+<section class="page">
+  <p class="label" style="color:var(--terracotta)">Before you start</p>
+  <h2 class="page-title">The money is out there. <em>It's just not where most students look.</em></h2>
+  <div class="welcome-grid">
+    <div class="avatar"><img src="../public/images/naomi-headshot.jpg" alt="Naomi Peters" /></div>
+    <div class="letter">
+      <p class="lead">Most students search the same two or three scholarship websites and stop there.</p>
+      <p>The money, jobs and programs that are easiest to win are usually somewhere else: in your own department, your hometown, your parents' workplaces and offices on campus you've never visited.</p>
+      <p>I didn't receive need-based aid, and my family didn't pay my tuition. I graduated with a finance degree, 20+ scholarships, 5 grants and $0 in student debt. This guide is the list I wish I'd had on day one.</p>
+      <p class="sign">— Naomi</p>
+    </div>
+  </div>
+  <div class="howto">
+    <p class="label">How to use this guide</p>
+    <ol>
+      <li>Read one section at a time. There are five, with five places in each.</li>
+      <li>For every place, write down one specific thing to look up this week.</li>
+      <li>Put every deadline you find into the opportunity calendar at the end.</li>
+    </ol>
+  </div>
+  <p class="fine">My results are my own and every student's situation is different. Eligibility, amounts and deadlines change every year, so always confirm details with the source.</p>
+  <div class="footer"><span><b>The College ROI Starter Kit</b> · Naomi Peters</span><span>makecollegepayoff.com · 2</span></div>
+</section>
+
+<!-- 3. SCHOLARSHIPS -->
+<section class="page">
+  <div class="sec-head"><div class="num">01</div><div><p class="label kicker">Places 1–5</p><h2>Scholarships beyond the big search engines</h2></div></div>
+  <p class="sec-intro">Local and niche scholarships get far fewer applicants than national ones, so your odds per application are much better.</p>
+  <div class="place"><div class="pn">1</div><div><h3>Your own department's scholarships</h3><p>Many departments award money separately from the main financial aid office, often to just a handful of students in the major.</p><p class="find"><b>How to find it</b>Email your department administrator: “What scholarships does our department award, and when do applications open?”</p></div></div>
+  <div class="place"><div class="pn">2</div><div><h3>Your parents' or guardians' employers</h3><p>Many companies, unions and credit unions offer scholarships to employees' children.</p><p class="find"><b>How to find it</b>Ask each parent or guardian to check their HR or benefits portal, and search “[employer name] scholarship.”</p></div></div>
+  <div class="place"><div class="pn">3</div><div><h3>Your local community foundation</h3><p>Most counties and cities have a community foundation that runs dozens of small scholarships through one application.</p><p class="find"><b>How to find it</b>Search “[your county or city] community foundation scholarships.”</p></div></div>
+  <div class="place"><div class="pn">4</div><div><h3>Civic and service clubs</h3><p>Rotary, Lions, Kiwanis, Elks and similar clubs often fund scholarships through their local chapters.</p><p class="find"><b>How to find it</b>Check the websites of the chapters in your hometown and your college town, or call and ask.</p></div></div>
+  <div class="place"><div class="pn">5</div><div><h3>Professional associations in your field</h3><p>Groups for accountants, engineers, nurses, journalists and most other careers have student scholarships, and student membership is often cheap or free.</p><p class="find"><b>How to find it</b>Search “[your field] association student scholarship.”</p></div></div>
+  <div class="footer"><span><b>The College ROI Starter Kit</b> · Scholarships</span><span>makecollegepayoff.com · 3</span></div>
+</section>
+
+<!-- 4. GRANTS -->
+<section class="page">
+  <div class="sec-head"><div class="num">02</div><div><p class="label kicker">Places 6–10</p><h2>Grants and department awards</h2></div></div>
+  <p class="sec-intro">Grants are money you don't repay, and many are awarded by offices that never advertise beyond campus.</p>
+  <div class="place"><div class="pn">6</div><div><h3>The FAFSA, every year</h3><p>Federal and state grants start here, and many colleges also require it for their own merit awards. File it every year even if you think you won't qualify.</p><p class="find"><b>How to find it</b>studentaid.gov, plus your state's higher-education agency for state grants.</p></div></div>
+  <div class="place"><div class="pn">7</div><div><h3>Undergraduate research funding</h3><p>Many schools pay students stipends to do research with faculty, especially over the summer.</p><p class="find"><b>How to find it</b>Look for an “Office of Undergraduate Research” on your college's website, or ask a professor whose work interests you.</p></div></div>
+  <div class="place"><div class="pn">8</div><div><h3>Conference and travel grants</h3><p>Departments, honors programs and the conferences themselves often cover registration, travel or lodging for students.</p><p class="find"><b>How to find it</b>Ask your department before you register, and look for “student scholarship” or “travel grant” on the conference website.</p></div></div>
+  <div class="place"><div class="pn">9</div><div><h3>Student government and honors program funds</h3><p>Many have budgets for student projects, events and professional development.</p><p class="find"><b>How to find it</b>Search your college's site for “student project funding,” or ask your honors office.</p></div></div>
+  <div class="place"><div class="pn">10</div><div><h3>Dean of students and emergency funds</h3><p>Many colleges keep small grants for unexpected costs like books, travel home or a gap in aid.</p><p class="find"><b>How to find it</b>Search “[your college] emergency grant,” or ask the dean of students' office directly.</p></div></div>
+  <div class="footer"><span><b>The College ROI Starter Kit</b> · Grants</span><span>makecollegepayoff.com · 4</span></div>
+</section>
+
+<!-- 5. INTERNSHIPS -->
+<section class="page">
+  <div class="sec-head"><div class="num">03</div><div><p class="label kicker">Places 11–15</p><h2>Internships and co-ops</h2></div></div>
+  <p class="sec-intro">Paid experience is both income and career capital, and the best roles are often filled before they're ever posted publicly.</p>
+  <div class="place"><div class="pn">11</div><div><h3>Your career center's job board</h3><p>Employers post here specifically because they want students from your school, so competition is smaller than on national sites.</p><p class="find"><b>How to find it</b>Log in to your college's job board (many schools use Handshake) and set alerts for your field.</p></div></div>
+  <div class="place"><div class="pn">12</div><div><h3>Co-op programs</h3><p>Co-ops are paid, full-time roles that usually last a semester or longer, often at large companies. They pay more than most internships and frequently lead to job offers.</p><p class="find"><b>How to find it</b>Search “[company] co-op program,” and ask your career center which employers recruit co-ops from your school.</p></div></div>
+  <div class="place"><div class="pn">13</div><div><h3>Your college's alumni</h3><p>Alumni are often glad to help students from their own school.</p><p class="find"><b>How to find it</b>On LinkedIn, open your college's page and click Alumni to filter by company, city and field. Ask for a 15-minute conversation, not a job.</p></div></div>
+  <div class="place"><div class="pn">14</div><div><h3>Faculty and research labs</h3><p>Professors hire students as paid research assistants and rarely advertise widely.</p><p class="find"><b>How to find it</b>Read faculty pages in your department and email two or three whose work interests you, saying what you'd like to learn.</p></div></div>
+  <div class="place"><div class="pn">15</div><div><h3>Startups, small businesses and nonprofits</h3><p>Smaller organizations often give students real responsibility sooner.</p><p class="find"><b>How to find it</b>Look at your city's startup or entrepreneurship network, chamber of commerce and nonprofit job boards.</p></div></div>
+  <div class="footer"><span><b>The College ROI Starter Kit</b> · Internships</span><span>makecollegepayoff.com · 5</span></div>
+</section>
+
+<!-- 6. FELLOWSHIPS -->
+<section class="page">
+  <div class="sec-head"><div class="num">04</div><div><p class="label kicker">Places 16–20</p><h2>Fellowships and funded programs</h2></div></div>
+  <p class="sec-intro">Fellowships pay you to learn, research or lead, and many students never apply simply because they never hear about them.</p>
+  <div class="place"><div class="pn">16</div><div><h3>Your college's fellowships office</h3><p>Many colleges have an office that helps students apply for nationally competitive awards, and some programs require your college to nominate you.</p><p class="find"><b>How to find it</b>Search “[your college] fellowships office” and meet an advisor early, often a year before deadlines.</p></div></div>
+  <div class="place"><div class="pn">17</div><div><h3>Summer research programs (REUs)</h3><p>The National Science Foundation funds Research Experiences for Undergraduates: paid summer research programs at universities across the country.</p><p class="find"><b>How to find it</b>Search “NSF REU sites” and filter by your field.</p></div></div>
+  <div class="place"><div class="pn">18</div><div><h3>National scholarships with a mission</h3><p>Programs such as the Goldwater (research careers in science, math and engineering), Truman (public service) and Udall (environment, and tribal policy or health care) fund students who show early commitment to a field.</p><p class="find"><b>How to find it</b>Read each program's eligibility page, then talk with your fellowships office about whether you're a fit.</p></div></div>
+  <div class="place"><div class="pn">19</div><div><h3>Leadership summits and conferences</h3><p>Many offer free or discounted student registration, and some cover travel. Being in the room is how you meet people who hire and fund.</p><p class="find"><b>How to find it</b>Search “[your field or interest] conference student scholarship” and check each event's registration page.</p></div></div>
+  <div class="place"><div class="pn">20</div><div><h3>Cause-based nonprofits and foundations</h3><p>Organizations focused on a cause you care about, like community service, interfaith work, health or the environment, often run their own student fellowships.</p><p class="find"><b>How to find it</b>Search “[your cause] student fellowship,” and look at the programs page of organizations you already follow.</p></div></div>
+  <div class="footer"><span><b>The College ROI Starter Kit</b> · Fellowships</span><span>makecollegepayoff.com · 6</span></div>
+</section>
+
+<!-- 7. STUDY ABROAD -->
+<section class="page">
+  <div class="sec-head"><div class="num">05</div><div><p class="label kicker">Places 21–25</p><h2>Study-abroad and international funding</h2></div></div>
+  <p class="sec-intro">Studying abroad can cost less than students assume, but most funding has deadlines months before the program starts.</p>
+  <div class="place"><div class="pn">21</div><div><h3>Your study abroad office</h3><p>Many colleges offer their own study abroad scholarships, and exchange agreements sometimes let you pay your home tuition while studying abroad.</p><p class="find"><b>How to find it</b>Ask a study abroad advisor: “Which programs cost about the same as a semester here, and what funding do you offer?”</p></div></div>
+  <div class="place"><div class="pn">22</div><div><h3>The Gilman Scholarship</h3><p>A U.S. Department of State program for students receiving Federal Pell Grants, to help fund study or internships abroad.</p><p class="find"><b>How to find it</b>Search “Gilman Scholarship” and check the current eligibility and deadlines.</p></div></div>
+  <div class="place"><div class="pn">23</div><div><h3>Boren Awards and the Critical Language Scholarship</h3><p>Both fund the study of languages the U.S. government considers critical. CLS runs funded summer language institutes; Boren includes a federal service requirement afterward.</p><p class="find"><b>How to find it</b>Search each by name and talk to your fellowships office.</p></div></div>
+  <div class="place"><div class="pn">24</div><div><h3>Study abroad program providers</h3><p>Organizations that run study abroad programs, such as CIEE, IES Abroad and API, offer their own scholarships and grants.</p><p class="find"><b>How to find it</b>Once you've picked a program, look for “scholarships” on its provider's website.</p></div></div>
+  <div class="place"><div class="pn">25</div><div><h3>The Fund for Education Abroad, and Fulbright after graduation</h3><p>FEA offers scholarships focused on students underrepresented in study abroad. For seniors and recent graduates, the Fulbright U.S. Student Program funds a year of study, research or teaching abroad.</p><p class="find"><b>How to find it</b>Search each by name. Fulbright applications are usually due in the fall of senior year.</p></div></div>
+  <div class="footer"><span><b>The College ROI Starter Kit</b> · Study abroad</span><span>makecollegepayoff.com · 7</span></div>
+</section>
+
+<!-- 8. CALENDAR -->
+<section class="page">
+  <p class="label" style="color:var(--terracotta)">Plan a season ahead</p>
+  <h2 class="page-title">Build your <em>opportunity calendar</em></h2>
+  <p class="sec-intro" style="margin-top:10pt">Most opportunities open on a predictable yearly cycle. Typical timing is below; your own deadlines will vary.</p>
+  <div class="seasons">
+    <div class="season"><p class="label when">Fall · Sep–Nov</p><h3>Apply early</h3><p>FAFSA for next year; large-company summer internships and co-ops; national fellowships and Fulbright.</p><p class="do"><b>Do now:</b> file the FAFSA early, apply to internships, meet your fellowships office.</p></div>
+    <div class="season"><p class="label when">Winter · Dec–Feb</p><h3>Line up summer</h3><p>Summer research programs (REUs), more summer internships, and many study abroad applications.</p><p class="do"><b>Do now:</b> ask professors for recommendations at least 3–4 weeks ahead.</p></div>
+    <div class="season"><p class="label when">Spring · Mar–May</p><h3>Go local</h3><p>Local, community foundation and club scholarships, plus department awards for next year.</p><p class="do"><b>Do now:</b> check every department and local deadline; reuse and tailor your essays.</p></div>
+    <div class="season"><p class="label when">Summer · Jun–Aug</p><h3>Get ready</h3><p>Few deadlines, which makes it the best time to prepare.</p><p class="do"><b>Do now:</b> update your resume, draft core essays, list next year's deadlines.</p></div>
+  </div>
+  <p class="label" style="margin-top:20pt">My opportunity tracker</p>
+  <table class="tracker">
+    <thead><tr><th style="width:30%">Opportunity</th><th style="width:22%">Where I found it</th><th style="width:15%">Deadline</th><th style="width:16%">Amount / pay</th><th>Status</th></tr></thead>
+    <tbody><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></tbody>
+  </table>
+  <div class="footer"><span><b>The College ROI Starter Kit</b> · Calendar</span><span>makecollegepayoff.com · 8</span></div>
+</section>
+
+<!-- 9. CLOSING -->
+<section class="page closing">
+  <p class="label eyebrow">Your next step</p>
+  <h2>Pick three places. <em>Look them up this week.</em></h2>
+  <p>Scholarships are only one piece of the puzzle. Your college strategy should connect money, opportunities, experience and what comes next.</p>
+  <p>If you'd like help deciding where to focus, book a free 20-minute College ROI Call. We'll find your biggest bottleneck and the opportunities you may be missing.</p>
+  <a class="cta" href="https://makecollegepayoff.com/book">Book your free 20-minute call →</a>
+  <p class="url"><a href="https://makecollegepayoff.com">makecollegepayoff.com</a></p>
+  <div class="sig">
+    <img src="../public/images/naomi-headshot.jpg" alt="Naomi Peters" />
+    <div><p class="n">Naomi Peters</p><p class="label d">College money, opportunity &amp; career strategy</p></div>
+  </div>
+  <p class="legal">Educational coaching only. Scholarship, admission, employment, travel, financial and debt outcomes are not guaranteed. This guide is not investment, tax, legal or individualized financial-planning advice. © 2026 Naomi Peters.</p>
+</section>
+
+</body>
+</html>
