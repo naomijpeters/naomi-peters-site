@@ -57,6 +57,9 @@ export const siteConfig = {
     intensive: env(process.env.NEXT_PUBLIC_STRIPE_INTENSIVE_URL) ?? "https://buy.stripe.com/3cI28k6lJ2yJ2e5feR2kw01",
     blueprint: env(process.env.NEXT_PUBLIC_STRIPE_ROI_BLUEPRINT_URL) ?? "https://buy.stripe.com/eVq6oA4dB4GR2e5d6J2kw02",
     paymentPlan: env(process.env.NEXT_PUBLIC_STRIPE_PAYMENT_PLAN_URL),
+    /** Gift purchases (see /gift). */
+    giftSession: env(process.env.NEXT_PUBLIC_STRIPE_GIFT_SESSION_URL),
+    giftPack: env(process.env.NEXT_PUBLIC_STRIPE_GIFT_PACK_URL),
   },
 
   /** Optional secondary processor. Not required; buttons appear only when set. */
@@ -65,6 +68,8 @@ export const siteConfig = {
     intensive: env(process.env.NEXT_PUBLIC_PAYPAL_INTENSIVE_URL),
     blueprint: env(process.env.NEXT_PUBLIC_PAYPAL_ROI_BLUEPRINT_URL),
     paymentPlan: undefined as string | undefined,
+    giftSession: undefined as string | undefined,
+    giftPack: undefined as string | undefined,
   },
 
   leadMagnetUrl: env(process.env.NEXT_PUBLIC_LEAD_MAGNET_URL),

@@ -1,6 +1,7 @@
 import { CheckoutButton, PayPalLink } from "@/components/CtaButtons";
 import { ServiceCta } from "@/components/ServiceCta";
 import { cx } from "@/components/ui";
+import { offers } from "@/content/offers";
 import { services, type Service } from "@/content/services";
 import { siteConfig } from "@/lib/siteConfig";
 
@@ -77,6 +78,11 @@ function ServiceCard({ service, compact, placement }: { service: Service; compac
         )}
       </p>
       <p className={cx("mt-5 font-medium", dark ? "text-ivory" : "text-ink")}>{service.summary}</p>
+      {service.perk && (
+        <p className={cx("mt-4 border-l-2 pl-3 text-sm font-medium", dark ? "border-gold text-ivory" : "border-terracotta text-ink")}>
+          {service.perk}
+        </p>
+      )}
       {!compact && <p className={cx("mt-3 text-[0.95rem] leading-relaxed", dark ? "text-ivory/85" : "text-ink-soft")}>{service.description}</p>}
 
       {list &&
@@ -124,6 +130,12 @@ export function ServicesGrid({ compact, placement = "services" }: { compact?: bo
   const packages = services.filter((s) => s.tier === "package");
   return (
     <div className="space-y-10">
+      {offers.foundingClients.active && (
+        <p className="flex flex-col gap-1 border border-terracotta/40 bg-terracotta/5 px-5 py-4 text-ink sm:flex-row sm:items-baseline sm:gap-3">
+          <span className="label text-terracotta">{offers.foundingClients.title}</span>
+          <span>{offers.foundingClients.text}</span>
+        </p>
+      )}
       <div>
         <p className="label mb-4 text-muted">Start here</p>
         <div className="grid gap-5 md:grid-cols-2">

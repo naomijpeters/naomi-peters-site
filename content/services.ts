@@ -1,3 +1,4 @@
+import { offers } from "@/content/offers";
 import type { BookingKind, CheckoutKind } from "@/lib/links";
 
 /**
@@ -24,6 +25,8 @@ export interface Service {
   choices?: string[];
   includes?: string[];
   note?: string;
+  /** A highlighted offer line, shown in every view. */
+  perk?: string;
   primaryCta: ServiceCta;
   secondaryCta?: ServiceCta;
   showPaymentPlan?: boolean;
@@ -60,6 +63,7 @@ export const services: Service[] = [
       "Study abroad / opportunity planning",
       "Semester / work-life planning",
     ],
+    perk: offers.sessionCredit.active ? offers.sessionCredit.text : undefined,
     primaryCta: { type: "booking", kind: "strategySession", label: "Book a strategy session" },
   },
   {

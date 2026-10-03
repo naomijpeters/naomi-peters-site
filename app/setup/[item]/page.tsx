@@ -19,6 +19,8 @@ const items: Record<SetupSlug, { title: string; kind: "booking" | "checkout" | "
   intensive: { title: "Scholarship & Opportunity Intensive", kind: "checkout", envVar: "NEXT_PUBLIC_STRIPE_INTENSIVE_URL" },
   blueprint: { title: "The College ROI Blueprint", kind: "checkout", envVar: "NEXT_PUBLIC_STRIPE_ROI_BLUEPRINT_URL" },
   "payment-plan": { title: "Blueprint payment plan", kind: "checkout", envVar: "NEXT_PUBLIC_STRIPE_PAYMENT_PLAN_URL" },
+  "gift-session": { title: "Gift: College ROI Strategy Session", kind: "checkout", envVar: "NEXT_PUBLIC_STRIPE_GIFT_SESSION_URL" },
+  "gift-pack": { title: "Gift: Strategy Pack", kind: "checkout", envVar: "NEXT_PUBLIC_STRIPE_GIFT_PACK_URL" },
   intake: { title: "Client intake questionnaire", kind: "client", envVar: "INTAKE_FORM_URL" },
   "client-scheduling": { title: "Client session scheduling", kind: "client", envVar: "CLIENT_SCHEDULING_URL" },
 };

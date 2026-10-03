@@ -17,6 +17,7 @@ export const footerNav = {
     { label: "Services & pricing", href: "/services" },
     { label: "Book a call", href: "/book" },
     { label: "Speaking & workshops", href: "/speaking" },
+    { label: "Give as a gift", href: "/gift" },
     { label: "Contact", href: "/contact" },
   ],
   Legal: [

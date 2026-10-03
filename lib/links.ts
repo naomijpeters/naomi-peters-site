@@ -15,6 +15,8 @@ export type SetupSlug =
   | "intensive"
   | "blueprint"
   | "payment-plan"
+  | "gift-session"
+  | "gift-pack"
   | "intake"
   | "client-scheduling";
 
@@ -35,6 +37,8 @@ const checkoutSlugs: Record<CheckoutKind, SetupSlug> = {
   intensive: "intensive",
   blueprint: "blueprint",
   paymentPlan: "payment-plan",
+  giftSession: "gift-session",
+  giftPack: "gift-pack",
 };
 
 export const bookingTitles: Record<BookingKind, string> = {
