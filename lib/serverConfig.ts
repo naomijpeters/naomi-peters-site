@@ -16,8 +16,9 @@ export const serverConfig = {
     env(process.env.CLIENT_SCHEDULING_URL) ?? "https://calendly.com/naomijpeters/client-coaching-session",
 
   email: {
-    provider: env(process.env.EMAIL_PROVIDER)?.toLowerCase(),
-    kit: { apiKey: env(process.env.KIT_API_KEY), formId: env(process.env.KIT_FORM_ID) },
+    /** Kit is the default; it stays "not connected" until KIT_API_KEY is set in Vercel. */
+    provider: (env(process.env.EMAIL_PROVIDER) ?? "kit").toLowerCase(),
+    kit: { apiKey: env(process.env.KIT_API_KEY), formId: env(process.env.KIT_FORM_ID) ?? "9995619" },
     beehiiv: {
       apiKey: env(process.env.BEEHIIV_API_KEY),
       publicationId: env(process.env.BEEHIIV_PUBLICATION_ID),
