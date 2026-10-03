@@ -58,8 +58,8 @@ export const siteConfig = {
     blueprint: env(process.env.NEXT_PUBLIC_STRIPE_ROI_BLUEPRINT_URL) ?? "https://buy.stripe.com/eVq6oA4dB4GR2e5d6J2kw02",
     paymentPlan: env(process.env.NEXT_PUBLIC_STRIPE_PAYMENT_PLAN_URL),
     /** Gift purchases (see /gift). */
-    giftSession: env(process.env.NEXT_PUBLIC_STRIPE_GIFT_SESSION_URL),
-    giftPack: env(process.env.NEXT_PUBLIC_STRIPE_GIFT_PACK_URL),
+    giftSession: env(process.env.NEXT_PUBLIC_STRIPE_GIFT_SESSION_URL) ?? "https://buy.stripe.com/eVq3co8tR7T38CtgiV2kw05",
+    giftPack: env(process.env.NEXT_PUBLIC_STRIPE_GIFT_PACK_URL) ?? "https://buy.stripe.com/4gM8wI6lJehrdWN7Mp2kw06",
   },
 
   /** Optional secondary processor. Not required; buttons appear only when set. */
